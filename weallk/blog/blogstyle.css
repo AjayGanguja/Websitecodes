@@ -1,0 +1,272 @@
+/**
+ * Variabbles
+ */
+/**
+ * Functions
+ */
+/**
+ * Mixins
+ */
+/**
+ * Styles
+ */
+body {
+  background-color: #f9f8f1;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+}
+
+p {
+  margin: 1.25rem 0;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+.o-page {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.o-main {
+  margin: 0 auto;
+  max-width: 37.5rem;
+  padding: 1.25rem;
+}
+
+.o-container {
+  margin: 1.25rem 0;
+}
+
+.c-author {
+  font-size: 3.75rem;
+  -webkit-filter: url("#liquify");
+          filter: url("#liquify");
+  opacity: 0;
+  text-align: center;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.c-author__korean {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 6.25rem;
+  font-weight: 400;
+}
+
+.c-author__english {
+  font-size: 1.40625rem;
+}
+
+.c-transition {
+  height: 250px;
+  width: 400px;
+  margin: 5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.c-transition::before {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/204808/ink-photo-frame.png");
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.c-transition::after {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/204808/ink-transition-sprite.png");
+  background-size: 100% 100%;
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-1.25%);
+          transform: translateX(-1.25%);
+  width: 4000%;
+}
+
+.c-transition.is-active::after {
+  -webkit-animation: ink-transition 2s steps(39) 0.5s forwards;
+          animation: ink-transition 2s steps(39) 0.5s forwards;
+}
+
+.c-transition--portrait {
+  height: 400px;
+  width: 250px;
+}
+
+.c-transition--portrait::before {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/204808/ink-photo-frame-portrait.png");
+}
+
+.c-transition--large {
+  height: 375px;
+  width: 600px;
+}
+
+.c-transition--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-transition__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  width: 100%;
+}
+
+.is-active .c-transition__img {
+  opacity: 1;
+}
+
+.c-transition--img-top .c-transition__img {
+  -o-object-position: 50% 0;
+     object-position: 50% 0;
+}
+
+.c-stamp {
+  display: block;
+  margin: 0 auto;
+  width: 2rem;
+}
+
+/**
+ * Utilities
+ */
+.u-korean {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.u-spacing-top-small {
+  margin-top: -0.9375rem;
+}
+
+/**
+ * Keyframes
+ */
+@-webkit-keyframes ink-transition {
+  0% {
+    -webkit-transform: translateX(-1.25%);
+            transform: translateX(-1.25%);
+  }
+  99% {
+    -webkit-transform: translateX(-98.75%);
+            transform: translateX(-98.75%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-98.75%);
+            transform: translateX(-98.75%);
+    opacity: 0;
+  }
+}
+@keyframes ink-transition {
+  0% {
+    -webkit-transform: translateX(-1.25%);
+            transform: translateX(-1.25%);
+  }
+  99% {
+    -webkit-transform: translateX(-98.75%);
+            transform: translateX(-98.75%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-98.75%);
+            transform: translateX(-98.75%);
+    opacity: 0;
+  }
+}
+
+.c-fe30 {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.c-fe30 a {
+  color: #eca522;
+}
+
+.c-fe30 a:hover {
+  text-decoration: none;
+}
+
+.c-ryanyu {
+  background-color: transparent;
+  display: block;
+  font-family: "Kalam", cursive;
+  height: 4.8125rem;
+  margin: 1.25rem auto;
+  position: relative;
+  text-align: center;
+  width: 4.8125rem;
+}
+
+.c-ryanyu img {
+  background-color: white;
+  border: 0.1875rem solid #eca522;
+  border-radius: 50%;
+  height: 4.375rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 4.375rem;
+}
+
+.c-ryanyu__front {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotateX(0) rotateY(0);
+          transform: rotateX(0) rotateY(0);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 2000;
+}
+
+.c-ryanyu:hover .c-ryanyu__front {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.c-ryanyu__back {
+  background-color: white;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 50%;
+  color: #eca522;
+  height: inherit;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  width: inherit;
+  z-index: 1000;
+}
+
+.c-ryanyu__back::before {
+  content: 'Ryan Yu';
+  display: block;
+  -webkit-transform: rotate(-45deg) translate(-6px, 27px);
+          transform: rotate(-45deg) translate(-6px, 27px);
+  width: 3.125rem;
+}
+
+.c-ryanyu:hover .c-ryanyu__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+/*# sourceMappingURL=style.css.map */
